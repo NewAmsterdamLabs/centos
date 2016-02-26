@@ -133,7 +133,8 @@
         "script/cmtool.sh",
         "script/docker.sh",
         "script/motd.sh",
-        "script/cleanup.sh"
+        "script/cleanup.sh",
+        "script/post-setup.sh"
       ],
       "type": "shell"
     }
