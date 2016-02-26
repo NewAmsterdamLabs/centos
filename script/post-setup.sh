@@ -1,5 +1,4 @@
 #!/bin/bash -eux
 
-# Reinstall gcc so we can use the vbguest plugin for vagrant
-echo "==> Reinstall gcc"
-yum -y install gcc
+echo "==> Install tools for vagrant-vbguest plugin"
+yum -y install dkms gcc
