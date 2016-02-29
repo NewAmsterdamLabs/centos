@@ -4,6 +4,12 @@
 
 This repository contains Packer templates for creating CentOS Vagrant boxes.
 
+## Zola Box
+
+To build the Zola specific box, run the following:
+
+    $ packer build -only=virtualbox-iso -var-file=centos72-zola.json centos-zola.json
+
 ## Current Boxes
 
 64-bit boxes:
