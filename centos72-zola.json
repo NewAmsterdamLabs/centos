@@ -1,6 +1,6 @@
 {
-  "_comment": "Build with `packer build -var-file=centos72-zola.json centos.json`",
-  "vm_name": "zola-dev-72-20160224",
+  "_comment": "Build with `packer build -var-file=centos72-zola.json centos-zola.json`",
+  "vm_name": "zola-dev-72-20160229",
   "cpus": "1",
   "disk_size": "65536",
   "iso_checksum": "4c6c65b5a70a1142dadb3c65238e9e97253c0d3a",

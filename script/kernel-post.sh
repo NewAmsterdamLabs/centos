@@ -9,4 +9,7 @@ if [[ $UPDATE  =~ true || $UPDATE =~ 1 || $UPDATE =~ yes ]]; then
     # Add new kernel extras
     yum -y --enablerepo=elrepo-kernel install kernel-ml-{headers,devel,tools,tools-libs}
 
+    echo "==> Reinstall gcc"
+    yum -y install gcc
+
   fi

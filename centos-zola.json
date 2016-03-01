@@ -128,12 +128,12 @@
         "script/vagrant.sh",
         "script/desktop.sh",
         "script/vmware.sh",
-        "script/virtualbox.sh",
+        "script/virtualbox-zola.sh",
         "script/parallels.sh",
         "script/cmtool.sh",
         "script/docker.sh",
         "script/motd.sh",
-        "script/cleanup.sh"
+        "script/cleanup-zola.sh"
       ],
       "type": "shell"
     }
