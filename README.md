@@ -26,7 +26,7 @@ To build the Zola specific box, run the following:
 * [CentOS 6.7 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67)
 * [CentOS 6.7 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67-desktop)
 * [CentOS 6.7 with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67-docker/)
-* [CentOS 6.7 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67)
+* [CentOS 6.6 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66)
 * [CentOS 6.6 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66-desktop)
 * [CentOS 6.6 with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66-docker/)
 * [CentOS 6.5 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos65/)
