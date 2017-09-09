@@ -18,6 +18,7 @@ To build the Zola specific box, run the following:
 * [CentOS 7.3 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos7-desktop)
 * [CentOS 6.9 (64-bit)](https://app.vagrantup.com/boxcutter/boxes/centos6)
 * [CentOS 6.9 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos6-desktop)
+* [CentOS 5.11 (64-bit)](https://app.vagrantup.com/boxcutter/boxes/centos5)
 
 ## Building the Vagrant boxes with Packer
 
