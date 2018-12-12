@@ -1,0 +1,14 @@
+{
+    "_comment": "Build with `packer build -var-file=centos76-zola.json centos-zola.json",
+    "vm_name": "zola-dev-76-20181210",
+    "cpus": "1",
+    "disk_size": "100000",
+    "http_directory": "kickstart/centos7",
+    "iso_checksum": "6d44331cc4f6c506c7bbe9feb8468fad6c51a88ca1393ca6b8b486ea04bec3c1",
+    "iso_checksum_type": "sha256",
+    "iso_name": "CentOS-7-x86_64-DVD-1810.iso",
+    "iso_url": "http://mirror.fileplanet.com/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso",
+    "iso_path": "/web/tools/packer/isos",
+    "memory": "512",
+    "parallels_guest_os_type": "centos7"
+}
