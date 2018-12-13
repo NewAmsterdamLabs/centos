@@ -34,8 +34,12 @@
 		    "modifyvm", "{{.Name}}", "--paravirtprovider", "{{ user `virtualbox_paravirtprovider` }}"
 		],
 		[
-		    "modifyvm", "{{.Name}}", "--nictype1", "{{ user `virtualbox_nictype` }}"
+		    "modifyvm", "{{.Name}}", "--nictype1", "virtio"
+		],
+		[
+		    "modifyvm", "{{.Name}}", "--audio", "none"
 		]
+
 	    ],
 	    "virtualbox_version_file": ".vbox_version",
 	    "vm_name": "{{ user `vm_name` }}"
@@ -66,7 +70,10 @@
 	    ],
 	    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
 	    "scripts": [
-		"script/update.sh"
+		"script/zola-pre.sh",
+		"script/update.sh",
+		"script/kernel.sh",
+		"script/kernel-post.sh"
 	    ],
 	    "type": "shell",
 	    "expect_disconnect": "true"
@@ -90,10 +97,7 @@
 		"script/fix-slow-dns.sh",
 		"script/sshd.sh",
 		"script/vagrant.sh",
-		"script/desktop.sh",
-		"script/vmware.sh",
 		"script/virtualbox.sh",
-		"script/parallels.sh",
 		"script/motd.sh",
 		"custom-script.sh",
 		"script/cleanup.sh"
