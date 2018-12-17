@@ -10,6 +10,11 @@ To build the Zola specific box, run the following:
 
     $ packer build -only=virtualbox-iso -var-file=centos76-zola.json centos-zola.json
 
+Once build you can upload it to s3 this way:
+	
+	$ aws s3 cp ${ZOLA_BOX_FILE} s3://zola-infrastructure --acl public-read
+	
+	
 ## Current Boxes
 
 We no longer provide pre-built binaries for these templates.
