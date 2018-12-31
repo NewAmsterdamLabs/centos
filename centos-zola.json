@@ -55,6 +55,7 @@
     ],
     "provisioners": [
 	{
+	    "type": "shell",
 	    "environment_vars": [
 		"CLEANUP_BUILD_TOOLS={{user `cleanup_build_tools`}}",
 		"DESKTOP={{user `desktop`}}",
@@ -79,6 +80,7 @@
 	    "expect_disconnect": "true"
 	},
 	{
+	    "type": "shell",
 	    "environment_vars": [
 		"CLEANUP_BUILD_TOOLS={{user `cleanup_build_tools`}}",
 		"DESKTOP={{user `desktop`}}",
@@ -99,7 +101,106 @@
 		"script/vagrant.sh",
 		"script/virtualbox.sh",
 		"script/motd.sh",
-		"custom-script.sh",
+		"custom-script.sh"
+	    ],
+	    "type": "shell",
+	    "pause_before": "10s"
+	},
+	{
+	    "type": "chef-solo",
+	    "version": "14.2.0",
+	    "cookbook_paths": ["/web/tools/vagrant/cookbooks"],
+	    "run_list": [
+		"recipe[yum]",
+		"recipe[runit]",
+		"recipe[yum-epel]",
+		"recipe[build-essential]",
+		"recipe[poise-python]",
+		"recipe[npm::remove]",
+		"recipe[nodejs]",
+		"recipe[firefox]",
+		"recipe[xvfb]",
+		"recipe[zola::default_for_packer]",
+		"recipe[sc-mongodb::default]",
+		"recipe[sc-mongodb::user_management]",
+		"recipe[java]",
+		"recipe[scala]",
+		"recipe[activator]",
+		"recipe[maven]",
+		"recipe[mosql]",
+		"recipe[ulimit]",
+		"recipe[redisio::install]",
+		"recipe[redisio::configure]",
+		"recipe[redisio::enable]",
+		"recipe[zola::post-install]"
+	    ],
+	    "json": {
+		"firefox" : {
+		    "version" : "60.4.0"
+		},
+		"java" : {
+		    "oracle" : {
+			"accept_oracle_download_terms" : true
+		    },
+		    "install_flavor" : "oracle",
+		    "jdk_version" : "8",
+		    "jdk" : {
+			"8" : {
+			    "x86_64" : {
+				"url" : "http://download.oracle.com/otn-pub/java/jdk/8u192-b12/750e1c8617c5452694857ad95c3ee230/jdk-8u192-linux-x64.tar.gz",
+				"checksum" : "6d34ae147fc5564c07b913b467de1411c795e290356538f22502f28b76a323c2"
+			    }
+			}
+		    }
+		},
+		"maven" : {
+		    "3" : {
+			"version" : "3.5.4",
+			"checksum" : "ce50b1c91364cb77efe3776f756a6d92b76d9038b0a0782f7d53acf1e997a14d"
+		    },
+		    "mavenrc" : {
+			"opts" : "-Xmx384m"
+		    }
+		},
+		"scala" : {
+		    "url" : "http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz",
+		    "version" : "2.11.8",
+		    "checksum" : "87fc86a19d9725edb5fd9866c5ee9424cdb2cd86b767f1bb7d47313e8e391ace"
+		},
+		"mongodb" : {
+		    "key_file_content" : "randomstring",
+		    "package_version" : "3.6.9",
+		    "config" : {
+			"auth" : true,
+			"mongod" : {
+			    "security" : {
+				"authorization" : "enabled",
+				"keyFile" : "/etc/mongod.keyfile",
+				"transitionToAuth" : "true"
+			    }
+			}
+		    },
+		    "users" : [
+			{ "username" : "dev_zola",
+			  "password" : "dev_password",
+			  "roles" : ["readWriteAnyDatabase"],
+			  "database" : "admin"
+			}
+		    ]
+		},
+		"redisio" : {
+		    "servers" : [
+			{"address" : "0.0.0.0", "protected_mode" : "no",  "port" : 6379}
+		    ],
+		    "safe_install" : false,
+		    "version" : "3.2.10"
+		}
+	    }
+	},
+	{
+	    "type": "shell",
+	    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+	    "scripts": [
 		"script/cleanup.sh"
 	    ],
 	    "type": "shell",
@@ -132,7 +233,7 @@
 	"ssh_username": "vagrant",
 	"update": "true",
 	"vagrantfile_template": "",
-	"version": "0.0.99",
+	"version": "0.1.00",
 	"virtualbox_guest_os_type": "RedHat_64",
 	"virtualbox_paravirtprovider": "default",
 	"virtualbox_nictype": "virtio",
