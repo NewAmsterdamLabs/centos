@@ -1,6 +1,6 @@
 {
     "_comment": "Build with `packer build -var-file=centos76-zola.json centos-zola.json",
-    "vm_name": "zola-dev-76-20181225",
+    "vm_name": "zola-dev-76-20190306",
     "cpus": "1",
     "disk_size": "100000",
     "http_directory": "kickstart/centos7",
