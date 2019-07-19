@@ -71,10 +71,8 @@
 	    ],
 	    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
 	    "scripts": [
-		"script/zola-pre.sh",
 		"script/update.sh",
-		"script/kernel.sh",
-		"script/kernel-post.sh"
+		"script/zola-pre.sh"
 	    ],
 	    "type": "shell",
 	    "expect_disconnect": "true"
