@@ -1,15 +1,16 @@
 {
     "_comment": "Build with `packer build -var-file=centos77-zola.json centos-zola.json",
-    "vm_name": "zola-dev-77-vbox6.1.0-20200109",
+    "vm_name": "zola-dev-77-vbox6.1.10-138449",
     "cpus": "1",
-    "disk_size": "100000",
+    "disk_size": "150000",
     "http_directory": "kickstart/centos7",
-    "iso_checksum": "9bba3da2876cb9fcf6c28fb636bcbd01832fe6d84cd7445fa58e44e569b3b4fe",
+    "iso_checksum": "087a5743dc6fd6706d9b961b8147423ddc029451b938364c760d75440eb7be14",
     "iso_checksum_type": "sha256",
-    "iso_name": "CentOS-7-x86_64-DVD-1810.iso",
-    "iso_url": "http://mirror.datto.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso",
-    "iso_path": "/web/tools/packer/isos",
+    "iso_name": "CentOS-7-x86_64-DVD-2003.iso",
+    "iso_url": "http://mirror.datto.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-2003.iso",
+    "iso_path": "/Users/rsetti/web/tools/packer/isos",
     "memory": "512",
     "parallels_guest_os_type": "centos7",
-    "update": "true"
+    "update": "true",
+    "version": "0.1.00"
 }
